@@ -1,9 +1,11 @@
 name: Deploy code to dev env
 
 on:
-  workflow_dispatch:
+  push:
     branch:
       - main
+      - develop
+      - feature/*
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -14,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy the code
-        run: echo "Deployed the code"
+        run: echo "Deployed the code using vscode"
       
